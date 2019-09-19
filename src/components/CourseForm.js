@@ -31,7 +31,7 @@ function CourseForm(props) {
         </div>
       </div> */}
 
-      {/* #21 RINSE AND REPEAT FOR AUTHOR AND CATEGORY */}
+      {/* Author is a select input and not a textinput therefore we will leave this alone for now */}
       <div className="form-group">
         <label htmlFor="author">Author</label>
         <div className="field">
@@ -44,7 +44,6 @@ function CourseForm(props) {
             //instead of throwing an error on react inspect tools
             //JS logical OR operator || 
             value={props.course.authorId || ""}
-            className="form-control"
           >
             <option value="" />
             <option value="1">Cory House</option>
@@ -53,21 +52,17 @@ function CourseForm(props) {
         </div>
       </div>
 
-      <div className="form-group">
-        <label htmlFor="category">Category</label>
-        <div className="field">
-          <input
-            type="text"
+          {/* #21 RINSE AND REPEAT FOR CATEGORY */}
+          <TextInput
             id="category"
             //added onCHange to allow typing in catory input field
+            label="category"
             onChange={props.onChange}
             name="category"
-            className="form-control"
             //set Value to props.course.catagory from empty string ""
             value={props.course.category}
           />
-        </div>
-      </div>
+
 
       <input type="submit" value="Save" className="btn btn-primary" />
     </form>
